@@ -10,7 +10,7 @@
     <div class="row">
 {% for x in Moviesdata %}
 
-    <div class="col-4 ">
+    <div class="col-4 mt-3">
         <div class="card bg-dark text-light">
             <img src="{{ x.image.url }}" class="card-img-top" alt="..." style=" height:400px;">
             <div class="card-body">
@@ -23,15 +23,14 @@
               <p class="card-text">
                 <div class="row">&nbsp;
                 <div class="col-2 bg-light text-dark rounded">{{x.duration}} น.</div>&nbsp;
-                <div class="col-2 bg-light text-dark rounded">{{x.genre}}</div>
-                <div class="col-7"></div>
+                <div class="col-3 bg-light text-dark rounded">{{x.genre}}</div>
+                <div class="col-6"></div>
                 </div> </p>
               
             </div>
           </div>
     </div>
 
-  
 {% endfor %}
 </div>
 </div>
