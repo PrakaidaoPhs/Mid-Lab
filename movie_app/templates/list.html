@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+<br><br>
+<center>
+    <h3><b>ภาพยนตร์ทั้งหมด</b></h3>
+    <br>
+</center>
+    <div class="row">
+{% for x in Moviesdata %}
+
+    <div class="col-4 ">
+        <div class="card bg-dark text-light">
+            <img src="{{ x.image.url }}" class="card-img-top" alt="..." style=" height:400px;">
+            <div class="card-body">
+              
+              <p class="card-text  text-danger">{{x.release_date}}</p>
+              <h2 class="card-title"><span class="material-symbols-outlined">
+                movie
+                </span> {{x.title}}</h2>
+              <p class="card-text">ผู้กำกับ {{x.director}}</p>
+              <p class="card-text">
+                <div class="row">&nbsp;
+                <div class="col-2 bg-light text-dark rounded">{{x.duration}} น.</div>&nbsp;
+                <div class="col-2 bg-light text-dark rounded">{{x.genre}}</div>
+                <div class="col-7"></div>
+                </div> </p>
+              
+            </div>
+          </div>
+    </div>
+
+  
+{% endfor %}
+</div>
+</div>
+{% endif %}
+{% endblock content %}
